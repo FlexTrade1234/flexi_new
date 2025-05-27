@@ -66,7 +66,7 @@ predictionfactory_page = st.Page(
 
 predictiongrid_page = st.Page(
     page="Pages/predictiongrid_page.py",
-    title="Grid Prediction Parameters",
+    title="Grid  Parameters Prediction",
     icon="🔌"  # Electric plug for grid
 )
 
