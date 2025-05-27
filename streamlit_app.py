@@ -78,7 +78,7 @@ strategicbid_page = st.Page(
 
 home_page = st.Page(
     page="Pages/home_page.py",
-    title="Home Page",
+    title="Data Input Page",
     icon="🏠"  # Home icon
 )
 
