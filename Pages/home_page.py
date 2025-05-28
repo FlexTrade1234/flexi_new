@@ -48,7 +48,7 @@ def display():
 
             if selected_columns_1:
                 st.subheader("Generated Plot for Grid Data")
-                fig, ax = plt.subplots(figsize=(6, 4))
+                fig, ax = plt.subplots(figsize=(5, 3))
 
                 # Plot numeric columns for Grid Data
                 data_1[selected_columns_1].plot(ax=ax)
@@ -100,7 +100,7 @@ def display():
 
             if selected_columns_2:
                 st.subheader("Generated Plot for Factory Data")
-                fig, ax = plt.subplots(figsize=(6, 4))
+                fig, ax = plt.subplots(figsize=(5, 3))
 
                 # Plot numeric columns for Factory Data
                 data_2[selected_columns_2].plot(ax=ax)
