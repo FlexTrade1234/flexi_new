@@ -56,12 +56,14 @@ def display():
                 # Set smaller font sizes for labels and ticks
                 ax.set_xlabel("Date/Time", fontsize=6)
                 ax.set_ylabel("Values", fontsize=6)
-                ax.tick_params(axis='x', labelsize=4)  # Reduce x-tick font
-                ax.tick_params(axis='y', labelsize=4)  # Reduce y-tick font
+                ax.tick_params(axis='x', labelsize=6)  # Reduce x-tick font
+                ax.tick_params(axis='y', labelsize=6)  # Reduce y-tick font
 
                 # Add formatting for the x-axis to show dates clearly
                 ax.set_xlabel("Date/Time")
                 plt.xticks(rotation=45)
+                # Add legend with smaller font size
+                ax.legend(fontsize=6)
                 st.pyplot(fig)
             else:
                 st.warning("Please select at least one column to generate a plot for Grid Data.")
@@ -114,12 +116,14 @@ def display():
                 # Set smaller font sizes for labels and ticks
                 ax.set_xlabel("Date/Time", fontsize=6)
                 ax.set_ylabel("Values", fontsize=6)
-                ax.tick_params(axis='x', labelsize=4)  # Reduce x-tick font
-                ax.tick_params(axis='y', labelsize=4)  # Reduce y-tick font
+                ax.tick_params(axis='x', labelsize=6)  # Reduce x-tick font
+                ax.tick_params(axis='y', labelsize=6)  # Reduce y-tick font
 
                 # Add formatting for the x-axis to show dates clearly
                 ax.set_xlabel("Date/Time")
                 plt.xticks(rotation=45)
+                # Add legend with smaller font size
+                ax.legend(fontsize=6)
                 st.pyplot(fig)
             else:
                 st.warning("Please select at least one column to generate a plot for Factory Data.")
