@@ -120,4 +120,6 @@ else:
     })
 st.sidebar.image("Screenshot 2024-09-30 at 9.26.48 PM.png")
 st.sidebar.write("Please send your queries at flexiblemarket0@gmail.com by your registered email id.")
+# Add logo to sidebar
+st.sidebar.image("iGRIDS.jpg", width=200)  # Adjust width as needed
 pg.run()
