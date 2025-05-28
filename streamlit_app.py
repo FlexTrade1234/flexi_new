@@ -102,18 +102,18 @@ if("user" in st.session_state and st.session_state["user"]=="admin"):
         "Dashboard": [admin1_page,admin2_page,logout]
     })
 
-#elif("user" in st.session_state):
- #   pg=st.navigation({
- #       "Dashboard": [bidding_page,check_dates,result_page,fast1,home_page , predictionfactory_page,predictiongrid_page,strategicbid_page,logout]
- #   })
 elif("user" in st.session_state):
-    pg = st.navigation({
-        "Dashboard": [
-            non_strategic_nav,
-            strategic_nav,
-            logout
-        ]
-    })
+   pg=st.navigation({
+       "Dashboard": [bidding_page,check_dates,result_page,fast1,home_page , predictionfactory_page,predictiongrid_page,strategicbid_page,logout]
+   })
+#elif("user" in st.session_state):
+    #pg = st.navigation({
+    #    "Dashboard": [
+    #        non_strategic_nav,
+    #        strategic_nav,
+    #        logout
+    #    ]
+    #})
 else:
     pg=st.navigation({
         "Users":[login_page,register_page]
