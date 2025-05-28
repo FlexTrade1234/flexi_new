@@ -53,6 +53,12 @@ def display():
                 # Plot numeric columns for Grid Data
                 data_1[selected_columns_1].plot(ax=ax)
 
+                # Set smaller font sizes for labels and ticks
+                ax.set_xlabel("Date/Time", fontsize=8)
+                ax.set_ylabel("Values", fontsize=8)
+                ax.tick_params(axis='x', labelsize=6)  # Reduce x-tick font
+                ax.tick_params(axis='y', labelsize=6)  # Reduce y-tick font
+
                 # Add formatting for the x-axis to show dates clearly
                 ax.set_xlabel("Date/Time")
                 plt.xticks(rotation=45)
@@ -104,6 +110,12 @@ def display():
 
                 # Plot numeric columns for Factory Data
                 data_2[selected_columns_2].plot(ax=ax)
+
+                # Set smaller font sizes for labels and ticks
+                ax.set_xlabel("Date/Time", fontsize=8)
+                ax.set_ylabel("Values", fontsize=8)
+                ax.tick_params(axis='x', labelsize=6)  # Reduce x-tick font
+                ax.tick_params(axis='y', labelsize=6)  # Reduce y-tick font
 
                 # Add formatting for the x-axis to show dates clearly
                 ax.set_xlabel("Date/Time")
