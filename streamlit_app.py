@@ -37,7 +37,7 @@ fast1 = st.Page(
     page="Pages/fast_bid.py",
     title="Quick Bidding",
     icon="🚀",
-    section="Non Strategic Bidding"
+    
 )
 
 
