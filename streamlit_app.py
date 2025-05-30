@@ -35,8 +35,9 @@ result_page = st.Page(
 
 fast1 = st.Page(
     page="Pages/fast_bid.py",
-    title="Fast_Bidding",
-    icon="🚀"
+    title="Quick Bidding",
+    icon="🚀",
+    section="Non Strategic Bidding"
 )
 
 
@@ -60,13 +61,13 @@ admin2_page=st.Page(
 
 predictionfactory_page = st.Page(
     page="Pages/predictionfactory_page.py",
-    title="Prediction Consumption Factory",
+    title="Prediction Factory Consumption",
     icon="🏭"  # Factory icon
 )
 
 predictiongrid_page = st.Page(
     page="Pages/predictiongrid_page.py",
-    title="Grid  Parameters Prediction",
+    title="Grid Prediction",
     icon="🔌"  # Electric plug for grid
 )
 
