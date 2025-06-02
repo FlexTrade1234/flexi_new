@@ -9,8 +9,8 @@ def display():
     main_option = st.radio("How many bids you want to make", ["Single", "Multiple"])
 
     # Load data
-    #file_path = "Data/optimalhours_with_values.csv"
-    file_path = "Data/updated_file.csv"
+    file_path = "Data/optimalhours_with_values.csv"
+    #file_path = "Data/updated_file.csv"
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
     else:
@@ -22,12 +22,12 @@ def display():
     df['Date'] = df['Hour_x'].dt.date
     df['Hour'] = df['Hour_x'].dt.hour
     df['Month'] = df['Hour_x'].dt.month
-    #df['Year'] = df['Hour_x'].dt.year
+    df['Year'] = df['Hour_x'].dt.year
 
     if main_option == "Single":
         input_date = st.date_input("Bidding Date")
         date = input_date.day
-        #year = input_date.year
+        year = input_date.year
         month = input_date.month
 
         price = st.number_input("Price")
