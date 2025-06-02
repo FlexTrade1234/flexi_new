@@ -22,12 +22,12 @@ def display():
     df['Date'] = df['Hour_x'].dt.date
     df['Hour'] = df['Hour_x'].dt.hour
     df['Month'] = df['Hour_x'].dt.month
-    df['Year'] = df['Hour_x'].dt.year
+    #df['Year'] = df['Hour_x'].dt.year
 
     if main_option == "Single":
         input_date = st.date_input("Bidding Date")
         date = input_date.day
-        year = input_date.year
+        #year = input_date.year
         month = input_date.month
 
         price = st.number_input("Price")
@@ -79,7 +79,7 @@ def display():
     else:
         input_date = st.date_input("Bidding Date")
         date = input_date.day
-        year = input_date.year
+        #year = input_date.year
         month = input_date.month
 
         price1_widget, quantity1_widget = st.columns([1, 1])
