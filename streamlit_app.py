@@ -7,7 +7,7 @@ from firebase_admin import firestore
 login_page=st.Page(
     page="Pages/login.py",
     title="Login",
-    icon="👤",
+    icon="🧑‍💼",
     default=True
 )
 register_page=st.Page(
