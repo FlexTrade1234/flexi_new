@@ -109,18 +109,19 @@ if "user" in st.session_state and st.session_state["user"] == "admin":
 elif "user" in st.session_state:
     pg = st.navigation(
         {
-            "User Dashboard": [
+            "Non-Strategic Bidding": [
                 home_page,
                 bidding_page,
-                check_dates,
-                result_page,
                 fast1,
+                check_dates,
+                
             ],
-            "Predictions": [
+            "Strategic Bidding": [
                 predictionfactory_page,
                 predictiongrid_page,
                 strategicbid_page,
             ],
+            "Results": [result_page,],
             "Account": [logout],
         }
     )
