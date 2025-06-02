@@ -136,17 +136,18 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown("---")
-st.markdown(
-    """
-    <div style="text-align: center; font-size: 12px; color: gray;">
-        © 2025 iGRIDS Platform. All rights reserved.<br>
-        Contact: <a href="mailto:flexiblemarket0@gmail.com">flexiblemarket0@gmail.com</a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+if pg == login_page or pg == register_page:
+# Sidebar copyright notice
+    st.sidebar.markdown(
+        """
+        <hr style="margin-top: 30px; margin-bottom: 10px;">
+        <div style="text-align: center; font-size: 12px; color: gray;">
+            © 2025 iGRIDS Platform. All rights reserved.<br>
+            Contact: <a href="mailto:flexiblemarket0@gmail.com">flexiblemarket0@gmail.com</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 #st.sidebar.image("iGRIDS.jpg", width=200)  # Adjust width as needed
 #st.sidebar.image("Screenshot 2024-09-30 at 9.26.48 PM.png")
 #st.sidebar.write("Please send your queries at flexiblemarket0@gmail.com by your registered email id.")
