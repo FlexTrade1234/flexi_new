@@ -119,7 +119,7 @@ def train_and_predict(data, start_date, start_time, end_date, end_time,target_co
     st.write(metrics_df)
 
 def display():
-    st.title("Prediction Section")
+    st.title("Grid Data Prediction")
 
     # Check if data exists in session state
     if "uploaded_data_1" not in st.session_state:
