@@ -110,13 +110,13 @@ elif "user" in st.session_state:
     pg = st.navigation(
         {
             "Non-Strategic Bidding": [
-                home_page,
                 bidding_page,
                 fast1,
                 check_dates,
                 
             ],
             "Strategic Bidding": [
+                home_page,
                 predictionfactory_page,
                 predictiongrid_page,
                 strategicbid_page,
