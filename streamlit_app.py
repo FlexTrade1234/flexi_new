@@ -61,13 +61,13 @@ admin2_page=st.Page(
 
 predictionfactory_page = st.Page(
     page="Pages/predictionfactory_page.py",
-    title="Prediction Factory Consumption",
+    title="Factory Consumption Prediction ",
     icon="🏭"  # Factory icon
 )
 
 predictiongrid_page = st.Page(
     page="Pages/predictiongrid_page.py",
-    title="Grid Prediction",
+    title="Grid Data Prediction",
     icon="🔌"  # Electric plug for grid
 )
 
