@@ -143,7 +143,7 @@ if pg == login_page or pg == register_page:
         <hr style="margin-top: 30px; margin-bottom: 10px;">
         <div style="text-align: center; font-size: 12px; color: gray;">
             © 2025 iGRIDS Platform. All rights reserved.<br>
-            Contact: <a href="mailto:flexiblemarket0@gmail.com">flexiblemarket0@gmail.com</a>
+            Contact: <a href="mailto:flexiblemarket01@gmail.com">flexiblemarket01@gmail.com</a>
         </div>
         """,
         unsafe_allow_html=True
