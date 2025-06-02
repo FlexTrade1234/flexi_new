@@ -121,11 +121,17 @@ else:
     })
 
 # Add logo to sidebar
-# Add circular, centered logo to sidebar
+import base64
+
+# Load and encode the image
+with open("iGRIDS.jpg", "rb") as image_file:
+    encoded = base64.b64encode(image_file.read()).decode()
+
+# Insert circular image using base64
 st.sidebar.markdown(
-    """
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="iGRIDS.jpg" style="width: 150px; height: 150px; border-radius: 50%;">
+    f"""
+    <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+        <img src="data:image/jpeg;base64,{encoded}" style="width: 150px; height: 150px; border-radius: 50%;">
     </div>
     """,
     unsafe_allow_html=True
