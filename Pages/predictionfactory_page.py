@@ -119,7 +119,7 @@ def train_and_predict(data, start_date, start_time, end_date, end_time,target_co
 
 def display():
     #print("Hello i am in the prediction section")
-    st.title(" Factory Prediction")
+    st.title(" Factory Consumption Prediction")
 
     # Check if data exists in session state
     if "uploaded_data_2" not in st.session_state:
