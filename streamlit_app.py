@@ -127,11 +127,11 @@ import base64
 with open("iGRIDS.jpg", "rb") as image_file:
     encoded = base64.b64encode(image_file.read()).decode()
 
-# Insert circular image using base64
+# Display a larger circular image in the sidebar
 st.sidebar.markdown(
     f"""
     <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
-        <img src="data:image/jpeg;base64,{encoded}" style="width: 150px; height: 150px; border-radius: 50%;">
+        <img src="data:image/jpeg;base64,{encoded}" style="width: 200px; height: 200px; border-radius: 50%;">
     </div>
     """,
     unsafe_allow_html=True
