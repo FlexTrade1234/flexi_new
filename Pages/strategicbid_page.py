@@ -9,7 +9,8 @@ def display():
     main_option = st.radio("How many bids you want to make", ["Single", "Multiple"])
 
     # Load data
-    file_path = "Data/optimalhours_with_values.csv"
+    #file_path = "Data/optimalhours_with_values.csv"
+    file_path = "Data/updated_file.csv"
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
     else:
