@@ -121,7 +121,16 @@ else:
     })
 
 # Add logo to sidebar
-st.sidebar.image("iGRIDS.jpg", width=200)  # Adjust width as needed
+# Add circular, centered logo to sidebar
+st.sidebar.markdown(
+    """
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="iGRIDS.jpg" style="width: 150px; height: 150px; border-radius: 50%;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+#st.sidebar.image("iGRIDS.jpg", width=200)  # Adjust width as needed
 #st.sidebar.image("Screenshot 2024-09-30 at 9.26.48 PM.png")
 #st.sidebar.write("Please send your queries at flexiblemarket0@gmail.com by your registered email id.")
 pg.run()
