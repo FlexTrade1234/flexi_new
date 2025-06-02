@@ -79,7 +79,7 @@ def display():
     else:
         input_date = st.date_input("Bidding Date")
         date = input_date.day
-        #year = input_date.year
+        year = input_date.year
         month = input_date.month
 
         price1_widget, quantity1_widget = st.columns([1, 1])
