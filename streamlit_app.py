@@ -95,7 +95,7 @@ strategic_nav = st.Page(
 
 
 
-
+'''
 ## -- Navigation setup -- ##
 
 if("user" in st.session_state and st.session_state["user"]=="admin"):
@@ -119,6 +119,52 @@ else:
     pg=st.navigation({
         "Users":[login_page,register_page]
     })
+'''
+## --- NAVIGATION SETUP [WITH SECTIONS] --- ##
+
+if "user" in st.session_state and st.session_state["user"] == "admin":
+    pg = st.navigation(
+        {
+            "Admin Dashboard": [admin1_page, admin2_page],
+            "Account": [logout],
+        }
+    )
+
+elif "user" in st.session_state:
+    pg = st.navigation(
+        {
+            "User Dashboard": [
+                home_page,
+                bidding_page,
+                check_dates,
+                result_page,
+                fast1,
+            ],
+            "Predictions": [
+                predictionfactory_page,
+                predictiongrid_page,
+                strategicbid_page,
+            ],
+            "Account": [logout],
+        }
+    )
+
+# Uncomment below if you later want separate navigation logic for different user types
+# elif "user" in st.session_state:
+#     pg = st.navigation(
+#         {
+#             "Non-Strategic": [non_strategic_nav],
+#             "Strategic": [strategic_nav],
+#             "Account": [logout],
+#         }
+#     )
+
+else:
+    pg = st.navigation(
+        {
+            "User Access": [login_page, register_page],
+        }
+    )
 
 # Add logo to sidebar
 import base64
