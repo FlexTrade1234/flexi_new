@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import os
+from Pages.globals import get
+from db import storethedata
 
 def display():
     st.title("Submit Strategic Bid")
@@ -60,7 +62,18 @@ def display():
                 st.success("Bid Submitted Successfully")
                 # Display only the required details
                 st.write(f"Price: {price}, Quantity: {quantity}, Date: {date}/{month}/{year}, Hour: {selected_hour}")
-
+            # Store in database
+                bid_obj = {
+                    "User": get("user"),
+                    "Quantity": quantity,
+                    "Price": price,
+                    "Date": date,
+                    "Month": month,
+                    "Year": year,
+                    "Hour": selected_hour,
+                    "State": "Waiting"
+                }
+                storethedata("Bids", bid_obj)
 
     else:
         input_date = st.date_input("Bidding Date")
@@ -120,5 +133,17 @@ def display():
                     selected_hour = int(selected_hours[i].split("Hour:")[1].split("|")[0].strip())
                     st.write(
                         f"Price: {prices[i]}, Quantity: {quantities[i]}, Date: {date}/{month}/{year}, Hour: {selected_hour}")
+                # Store in database
+                    bid_obj = {
+                        "User": get("user"),
+                        "Quantity": quantities[i],
+                        "Price": prices[i],
+                        "Date": date,
+                        "Month": month,
+                        "Year": year,
+                        "Hour": selected_hour,
+                        "State": "Waiting"
+                    }
+                    storethedata("Bids", bid_obj)
 
 display()
