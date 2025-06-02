@@ -96,7 +96,7 @@ strategic_nav = st.Page(
 
 
 
-## --- NAVIGATION SETUP [WITH SECTIONS] --- ##
+## --- NAVIGATION SETUP [WITH SECTIONS22] --- ##
 
 if "user" in st.session_state and st.session_state["user"] == "admin":
     pg = st.navigation(
