@@ -1,4 +1,4 @@
-import streamlit as st
+'''import streamlit as st
 import pandas as pd
 import numpy as np
 import xgboost as xgb
@@ -161,3 +161,79 @@ def display():
         train_and_predict(data2, start_date, start_time, end_date, end_time, target_column)
         print("training done")
 display()
+'''
+### new code with cloud fucntions
+import streamlit as st
+import pandas as pd
+import requests
+from datetime import datetime, time
+
+
+def display():
+    st.title("🏭 Factory Consumption Prediction")
+
+    # Check if data exists in session state
+    if "uploaded_data_2" not in st.session_state:
+        st.warning("No data available. Please upload data on the Home page first.")
+        return
+
+    # Retrieve the data
+    data2 = st.session_state["uploaded_data_2"]
+
+    # Show preview
+    st.subheader("Data Preview")
+    st.dataframe(data2)
+
+    # Target column
+    st.subheader("Select Target Column")
+    target_column = st.selectbox(
+        "Choose the target column for prediction:",
+        options=[col for col in ["ID1", "ID2", "ID3"] if col in data2.columns],
+        index=0
+    )
+
+    # Dates and times
+    start_date = st.date_input("Select Start Date", value=datetime(2024, 10, 1))
+    start_time = st.time_input("Select Start Time", value=time(0, 0))
+    end_date = st.date_input("Select End Date", value=datetime(2024, 10, 6))
+    end_time = st.time_input("Select End Time", value=time(0, 0))
+
+    if st.button("Run Prediction"):
+        with st.spinner("Running prediction via Cloud Function..."):
+            # Prepare request payload
+            payload = {
+                "data": data2.reset_index().to_dict(orient="records"),  # convert DF to list of dicts
+                "start_date": str(start_date),
+                "start_time": str(start_time),
+                "end_date": str(end_date),
+                "end_time": str(end_time),
+                "target_column": target_column,
+                "bucket_name": "my-ml-plots-bucket"  # <- your GCS bucket
+            }
+
+            # Call Cloud Function
+            url = "https://REGION-PROJECT.cloudfunctions.net/train_and_predict"  # <-- replace
+            response = requests.post(url, json=payload)
+
+            if response.status_code == 200:
+                result = response.json()
+
+                # Show metrics
+                st.subheader("📊 Model Evaluation Metrics")
+                st.write(pd.DataFrame(list(result["metrics"].items()), columns=["Metric", "Value"]))
+
+                # Show plots
+                st.subheader("📈 Feature Importance")
+                st.image(result["plots"]["feature_importance_plot"])
+
+                st.subheader("📈 Predictions vs Actual")
+                st.image(result["plots"]["predictions_plot"])
+
+                # Show predictions if small
+                predictions_df = pd.DataFrame(result["predictions"])
+                st.subheader("Predictions")
+                st.dataframe(predictions_df)
+
+            else:
+                st.error(f"Error: {response.status_code} - {response.text}")
+
